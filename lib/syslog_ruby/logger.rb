@@ -153,7 +153,7 @@ module SyslogRuby
                   end
 
       begin
-        !!socket.write(proto_msg)
+        !!socket.send(proto_msg, 0)
       rescue => e
         retries ||= 0
         retries += 1
